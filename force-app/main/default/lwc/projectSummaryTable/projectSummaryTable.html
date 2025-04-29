@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Project Summary Table" icon-name="standard:task">
+        <template if:true={flatProjectData}>
+            <lightning-datatable
+                key-field="Id"
+                data={flatProjectData}
+                columns={columns}
+                hide-checkbox-column="true"
+                show-row-number-column="true">
+            </lightning-datatable>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-p-around_medium">Error loading data: {error}</p>
+        </template>
+
+        <template if:true={noData}>
+            <div class="slds-p-around_medium slds-text-align_center">No data found.</div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,23 @@
+<template>
+    <template for:each={milestones} for:item="milestone" for:index="index">
+        <div key={milestone.key} class="slds-box slds-m-bottom_small">
+            <lightning-input 
+                label="Milestone Name" 
+                value={milestone.name} 
+                data-index={index} 
+                onchange={handleNameChange}>
+            </lightning-input>
+
+            <lightning-input 
+                type="date" 
+                label="Due Date" 
+                value={milestone.dueDate} 
+                data-index={index} 
+                onchange={handleDueDateChange}>
+            </lightning-input>
+        </div>
+    </template>
+
+    <lightning-button label="Add Milestone" onclick={addMilestone} class="slds-m-top_medium"></lightning-button>
+    <lightning-button variant="brand" label="Next" onclick={saveMilestones} class="slds-m-top_medium"></lightning-button>
+</template>

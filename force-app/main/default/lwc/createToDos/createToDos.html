@@ -1,0 +1,36 @@
+<template>
+    <template for:each={toDos} for:item="todo" for:index="index">
+        <div key={toDos.key} class="slds-box slds-m-bottom_small">
+            <lightning-input 
+                label="To-Do Name" 
+                value={todo.name} 
+                data-index={index} 
+                onchange={handleNameChange}>
+            </lightning-input>
+            <lightning-combobox
+                label="Milestone"
+                value={todo.milestoneId}
+                options={milestoneOptions}
+                data-index={index}
+                onchange={handleMilestoneChange}>
+            </lightning-combobox>
+            <lightning-combobox
+                label="Status"
+                value={todo.status}
+                options={statusOptions}
+                data-index={index}
+                onchange={handleStatusChange}>
+            </lightning-combobox>
+            <lightning-input 
+                type="date" 
+                label="Due Date" 
+                value={todo.dueDate} 
+                data-index={index}
+                onchange={handleDueDateChange}>
+            </lightning-input>
+        </div>
+    </template>
+
+    <lightning-button label="Add To-Do" onclick={addToDo} class="slds-m-top_medium"></lightning-button>
+    <lightning-button variant="brand" label="Save" onclick={saveToDos} class="slds-m-top_medium"></lightning-button>
+</template>

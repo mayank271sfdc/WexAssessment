@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Project Management">
+        <div class="slds-p-around_medium">
+            <template if:true={showCreateProject}>
+                <c-create-project onnext={handleNextFromProject}></c-create-project>
+            </template>
+
+            <template if:true={showCreateMilestones}>
+                <c-create-milestones project-id={projectId} onnext={handleNextFromMilestones}></c-create-milestones>
+            </template>
+
+            <template if:true={showCreateToDos}>
+                <c-create-to-dos milestones={milestones} onnext={handleNextFromToDos}></c-create-to-dos>
+            </template>
+
+            <template if:true={showSummary}>
+                <c-project-summary-table></c-project-summary-table>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -10,7 +10,7 @@
             </template>
 
             <template if:true={showCreateToDos}>
-                <c-create-to-dos milestones={milestones} onnext={handleNextFromToDos}></c-create-to-dos>
+                <c-create-to-dos milestones={milestones} onsave={handleNextFromToDos}></c-create-to-dos>
             </template>
 
             <template if:true={showSummary}>

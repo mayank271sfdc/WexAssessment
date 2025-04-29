@@ -68,7 +68,7 @@ export default class CreateToDos extends LightningElement {
                     variant: "success"
                 }));
 
-                const nextEvent = new CustomEvent('next');
+                const nextEvent = new CustomEvent('save');
                 this.dispatchEvent(nextEvent);
             })
             .catch(error => {

@@ -16,7 +16,6 @@ export default class CreateProject extends LightningElement {
 
         saveProject({ projectRecord: projectRecord })
             .then(result => {
-
                 const nextEvent = new CustomEvent('next', { detail: result });
                 this.dispatchEvent(nextEvent);
             })
